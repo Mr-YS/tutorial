@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <title>튜토리얼</title>
   </head>
-  <body>
+  <body onkeydown="clicked()">
     <h3> 알았어요 </h3>
+    <div id="output"></div>
+    <script>
+    var message = '누름';
+    function clicked(){
+      document.getElementById('output').innerHTML = message;
+      message += '?';
+    }
+    </script>
   </body>
 </html>
