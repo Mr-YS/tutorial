@@ -8,10 +8,25 @@
     <h3> 알았어요 </h3>
     <div id="output"></div>
     <script>
-    var message = '누름';
-    function clicked(){
+    var message = '';
+    function clicked() {
+      switch (event.keyCode) {
+      case 83:
+        message += '아래↘  <br>';
+        break;
+      case 87:
+        message += '위↑ <br>';
+        break;
+      case 65:
+        message += '좌회전 <br>';
+        break;
+      case 68:
+        message += '오른쪽 <br>';
+        break;
+      default:
+        return;
+      }
       document.getElementById('output').innerHTML = message;
-      message += '?';
     }
     </script>
   </body>
