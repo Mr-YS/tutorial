@@ -3,7 +3,10 @@
   <head>
     <style>
     body {
-      background-color: orange;
+      background-image: url("AGARIO.png");
+      background-position: right top;
+      background-repeat: no-repeat;
+
     }
     h1 {
       color : white;
@@ -18,6 +21,7 @@
       font-family: "Times New Roman";
       text-align : center;
       margin-right : 40px;
+      background-color :pink;
     }
     tod{
       text-align :right;
