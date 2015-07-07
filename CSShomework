@@ -13,6 +13,17 @@
       font-family: "Times New Roman";
       font-size:30px;
     }
+    h2, h3{
+      font-family: "Times New Roman";
+      text-align : center;
+    }
+    tod{
+      text-align :right;
+    }
+    p.center {
+      text-align:center;
+      color:red;
+    }
     /* COMMENT */
     </style>
   </head>
@@ -20,5 +31,9 @@
     <h1> CSS INTRODUCTION </h1>
     <p> MR.YS </p>
     <p id = "paral"> Y$ </p>
+    <h2 id = "center"> HELLO </h2>
+    <h3> WORLD </h3>
+    <p id = "tod"> exception</p> /**/
+    <p id = "center">qwerty</p>
   </body>
 </html>
