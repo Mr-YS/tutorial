@@ -19,5 +19,6 @@
   <body>
     <h1> CSS INTRODUCTION </h1>
     <p> MR.YS </p>
+    <p id = "paral"> Y$ </p>
   </body>
 </html>
