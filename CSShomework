@@ -12,10 +12,12 @@
     p {
       font-family: "Times New Roman";
       font-size:30px;
+      margin-left:20px;
     }
     h2, h3{
       font-family: "Times New Roman";
       text-align : center;
+      margin-right : 40px;
     }
     tod{
       text-align :right;
@@ -33,7 +35,9 @@
     <p id = "paral"> Y$ </p>
     <h2 id = "center"> HELLO </h2>
     <h3> WORLD </h3>
-    <p id = "tod"> exception</p> /**/
+    <p id = "tod"> exception</p>
     <p id = "center">qwerty</p>
+    <h4 style = "color:red;margin-left:70px;">
+      THIS IS H4 WRITING </h4>
   </body>
 </html>
