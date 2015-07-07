@@ -16,6 +16,7 @@
       font-family: "Times New Roman";
       font-size:30px;
       margin-left:20px;
+      font-style:oblique;
     }
     h2, h3{
       font-family: "Times New Roman";
