@@ -8,39 +8,30 @@
         position: absolute;
         top: 50vh;
         left: 50vw;
-        margin-top: -50px;
-        margin-left: -50px;
         width: 100px;
         height: 100px;
         border-radius: 50%;
         background: red;
+        margin-top: -50px;
+        margin-left: -50px;
       }
     </style>
   </head>
   <body onkeydown="clicked()">
     <div id="circle"></div>
-    <h3> 알았어요 </h3>
-    <div id="output"></div>
     <script>
-    var message = '';
+    var x = -50, y = -50;
     function clicked() {
       switch (event.keyCode) {
-      case 83:
-        message += '아래↘  <br>';
-        break;
-      case 87:
-        message += '위↑ <br>';
-        break;
-      case 65:
-        message += '좌회전 <br>';
-        break;
-      case 68:
-        message += '오른쪽 <br>';
-        break;
+      case 83: y += 5; break;
+      case 87: y -= 5; break;
+      case 65: x -= 5; break;
+      case 68: x += 5; break;
       default:
         return;
       }
-      document.getElementById('output').innerHTML = message;
+      document.getElementById('circle').style.marginLeft = x + 'px';
+      document.getElementById('circle').style.marginTop = y + 'px';
     }
     </script>
   </body>
