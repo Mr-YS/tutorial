@@ -14,10 +14,25 @@
         background: red;
         margin-top: -50px;
         margin-left:-50px;
+      }
+      #box{
+        position : absolute;
+        top: 50vh;
+        left: 50vw;
+        width: 1400px;
+        height : 700px;
+        border-radius: 10px;
+        margin-top: -350px;
+        margin-left: -700px;
+        border-style: dashed ;
+        border-width: 5px;
+        border-color: gray;
+      }
     </style>
   </head>
   <body onkeydown="start()" onkeyup="end()">
     <div id="circle"></div>
+    <div id="box"></div>
     <script>
       var y = -50 , x = -50;
       var left = false, right = false, up = false, down = false;
@@ -34,19 +49,19 @@
 
       setInterval(function(){
         if(left == true){
-          x -= 2;
+          x -= 4;
           document.getElementById('circle').style.marginLeft = x + 'px';
         }
         if(right == true){
-          x += 2;
+          x += 4;
           document.getElementById('circle').style.marginLeft = x + 'px';
         }
         if(up == true){
-          y -= 2;
+          y -= 4;
           document.getElementById('circle').style.marginTop = y + 'px';
         }
         if(down == true){
-          y += 2;
+          y += 4;
           document.getElementById('circle').style.marginTop = y + 'px';
         }
       },16);
