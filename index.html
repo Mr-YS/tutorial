@@ -25,9 +25,10 @@
         border-radius: 25px;
         margin-top: -350px;
         margin-left: -700px;
-        border-style: dashed ;
-        border-width: 5px;
+        border-style: dashed;
+        border-width: 10px;
         border-color: gray;
+        box-sizing: border-box;
       }
     </style>
   </head>
@@ -47,15 +48,17 @@
       }
 
       var circleStyle = document.getElementById('circle').style;
-      var x = -50, y = -50;
+      var x = 0, y = 0;
       setInterval(function() {
         if (left) { x -= 4; }
         if (right) { x += 4; }
         if (up) { y -= 4; }
         if (down) { y += 4; }
 
-        circleStyle.marginLeft = x + 'px';
-        circleStyle.marginTop = y + 'px';
+        if (650 < x) { x = 650; }
+
+        circleStyle.marginLeft = (x - 50) + 'px';
+        circleStyle.marginTop = (y - 50) + 'px';
       }, 16);
     </script>
   </body>
