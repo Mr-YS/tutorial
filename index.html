@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>튜토리얼</title>
+    <title>tutorial</title>
     <style>
-      #circle {
-        position: absolute;
+      #circle{
+        position : absolute;
         top: 50vh;
         left: 50vw;
         width: 100px;
@@ -13,26 +13,52 @@
         border-radius: 50%;
         background: red;
         margin-top: -50px;
-        margin-left: -50px;
-      }
+        margin-left:-50px;
     </style>
   </head>
-  <body onkeydown="clicked()">
+  <body onkeydown="start()" onkeyup="end()">
     <div id="circle"></div>
     <script>
-    var x = -50, y = -50;
-    function clicked() {
-      switch (event.keyCode) {
-      case 83: y += 5; break;
-      case 87: y -= 5; break;
-      case 65: x -= 5; break;
-      case 68: x += 5; break;
-      default:
-        return;
+      var y = -50 , x = -50;
+      var left = false, right = false, up = false, down = false;
+      function start(){
+        switch(event.keyCode) {
+          case 65: left = true; break;
+          case 68: right = true; break;
+          case 87: up = true; break;
+          case 83: down = true; break;
+          default:
+            return;
+        }
       }
-      document.getElementById('circle').style.marginLeft = x + 'px';
-      document.getElementById('circle').style.marginTop = y + 'px';
-    }
+
+      setInterval(function(){
+        if(left == true){
+          x -= 2;
+          document.getElementById('circle').style.marginLeft = x + 'px';
+        }
+        if(right == true){
+          x += 2;
+          document.getElementById('circle').style.marginLeft = x + 'px';
+        }
+        if(up == true){
+          y -= 2;
+          document.getElementById('circle').style.marginTop = y + 'px';
+        }
+        if(down == true){
+          y += 2;
+          document.getElementById('circle').style.marginTop = y + 'px';
+        }
+      },16);
+
+      function end(){
+        switch(event.keyCode) {
+          case 65: left = false; break;
+          case 68: right = false; break;
+          case 87: up = false; break;
+          case 83: down = false; break;
+        }
+      }
     </script>
   </body>
 </html>
