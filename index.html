@@ -32,23 +32,33 @@
       }
     </style>
   </head>
-  <body onkeydown="key(true)" onkeyup="key(false)">
+  <body onkeydown="key(true); color();" onkeyup="key(false);">
     <div id="circle"></div>
     <div id="box"></div>
 
     <script>
+      var circleStyle = document.getElementById('circle').style;
+
       var left = false, right = false, up = false, down = false;
       function key(state) {
-        switch(event.keyCode) {
-          case 65: left = state; break;
-          case 68: right = state; break;
-          case 87: up = state; break;
-          case 83: down = state; break;
-          case 27: window.close(); break;
+        switch (event.keyCode) {
+        case 65: left = state; break; // A
+        case 68: right = state; break; // D
+        case 87: up = state; break; // W
+        case 83: down = state; break; // S
+        case 27: window.close(); break; // ESC
         }
       }
 
-      var circleStyle = document.getElementById('circle').style;
+      function color() {
+        // Return if key is not 'E'
+        if (event.keyCode != 69) { return; }
+
+        var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
+        var i = Math.floor(Math.random() * 5)
+        circleStyle.background = colors[i];
+      }
+
       var x = 0, y = 0;
       setInterval(function() {
         if (left) { x -= 4; }
