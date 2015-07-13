@@ -32,12 +32,17 @@
       }
     </style>
   </head>
-  <body onkeydown="key();">
+  <body onkeydown="key();" onmousemove="mouseMove();">
     <div id="circle"></div>
     <div id="box"></div>
+    <span id="result"></span>
 
     <script>
       var circleStyle = document.getElementById('circle').style;
+      var result = document.getElementById('result');
+      function mouseMove() {
+        result.innerHTML ='client : '+event.clientX+','+event.clientY;
+      }
 
       function key() {
         switch (event.keyCode) {
