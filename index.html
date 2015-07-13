@@ -56,7 +56,9 @@
         if (down) { y += 4; }
 
         if (650 < x) { x = 650; }
-
+        if (-650 > x) { x = -650; }
+        if (300 < y) { y = 300; }
+        if (-300 > y) { y = -300; }
         circleStyle.marginLeft = (x - 50) + 'px';
         circleStyle.marginTop = (y - 50) + 'px';
       }, 16);
