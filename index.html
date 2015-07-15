@@ -35,35 +35,12 @@
   <body onkeydown="key();" onmousemove="mouseMove();">
     <div id="circle"></div>
     <div id="box"></div>
-    <span id="result"></span>
 
     <script>
-      var x = 0, y = 0;
-
-      var circle = document.getElementById('circle');
-      var result = document.getElementById('result');
-      var theta = 0.0;
-
+      var mouseX = 0, mouseY = 0;
       function mouseMove() {
-        var mouseX = event.clientX;
-        var mouseY = event.clientY;
-
-        var rect = circle.getBoundingClientRect();
-        var circleX = rect.left + 50.0;
-        var circleY = rect.top + 50.0;
-
-        var deltaX = mouseX - circleX;
-        var deltaY = mouseY - circleY;
-
-        var dist = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
-
-        result.innerHTML =
-          'Mouse : '+ mouseX + ', ' + mouseY + '<br>' +
-          'Circle : ' + circleX + ', ' + circleY + '<br>' +
-          'Displacement : ' + deltaX + ', ' + deltaY + '<br>' +
-          'Distance : ' + dist;
-
-        theta = Math.atan2(deltaY, deltaX);
+        mouseX = event.clientX;
+        mouseY = event.clientY;
       }
 
       function key() {
@@ -73,17 +50,24 @@
         }
       }
 
+      var circle = document.getElementById('circle');
       function changeColor() {
         var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
         var i = Math.floor(Math.random() * 5)
         circle.style.background = colors[i];
       }
 
+      var x = 0, y = 0;
       var deltaT = 16; // millisecond
       setInterval(function() {
-        // Change x, y
-        var speed = 0.1;
+        // Update x, y
+        var rect = circle.getBoundingClientRect();
+        var theta = Math.atan2(mouseY - (rect.top + 50.0), mouseX - (rect.left + 50.0));
+        console.log(theta);
+
+        var speed = 0.8;
         var distance = speed * deltaT;
+
         x += distance * Math.cos(theta);
         y += distance * Math.sin(theta);
 
