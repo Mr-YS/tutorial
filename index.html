@@ -38,6 +38,8 @@
     <span id="result"></span>
 
     <script>
+      var x = 0, y = 0;
+
       var circle = document.getElementById('circle');
       var result = document.getElementById('result');
       function mouseMove() {
@@ -58,6 +60,9 @@
           'Circle : ' + circleX + ', ' + circleY + '<br>' +
           'Displacement : ' + deltaX + ', ' + deltaY + '<br>' +
           'Distance : ' + dist;
+
+        x += deltaX;
+        y += deltaY;
       }
 
       function key() {
@@ -73,7 +78,6 @@
         circle.style.background = colors[i];
       }
 
-      var x = 0, y = 0;
       setInterval(function() {
         if (650 < x) { x = 650; }
         if (-650 > x) { x = -650; }
