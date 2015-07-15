@@ -41,12 +41,14 @@
       var circle = document.getElementById('circle');
       var result = document.getElementById('result');
       var clientCircle = circle.getBoundingClientRect();
-      var circleClientX = Math.floor(clientCircle.left);
-      var circleClientY = Math.floor(clientCircle.top);
+      var circleClientX = (Math.floor(clientCircle.left)+50);
+      var circleClientY = (Math.floor(clientCircle.top)+50);
       function mouseMove() {
         result.innerHTML ='mouse-client : '+event.clientX+','+event.clientY+
                           '<br>rect-client :'
-                          +circleClientX+','+circleClientY;
+                          +circleClientX+','+circleClientY+
+                          '<br>distance :'
+                          +(circleClientX-event.clientX)+','+(circleClientY-event.clientY);
       }
 
       function key() {
