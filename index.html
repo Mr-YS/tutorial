@@ -40,15 +40,24 @@
     <script>
       var circle = document.getElementById('circle');
       var result = document.getElementById('result');
-      var clientCircle = circle.getBoundingClientRect();
-      var circleClientX = (Math.floor(clientCircle.left)+50);
-      var circleClientY = (Math.floor(clientCircle.top)+50);
       function mouseMove() {
-        result.innerHTML ='mouse-client : '+event.clientX+','+event.clientY+
-                          '<br>rect-client :'
-                          +circleClientX+','+circleClientY+
-                          '<br>distance :'
-                          +(circleClientX-event.clientX)+','+(circleClientY-event.clientY);
+        var mouseX = event.clientX;
+        var mouseY = event.clientY;
+
+        var rect = circle.getBoundingClientRect();
+        var circleX = rect.left + 50.0;
+        var circleY = rect.top + 50.0;
+
+        var deltaX = mouseX - circleX;
+        var deltaY = mouseY - circleY;
+
+        var dist = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+
+        result.innerHTML =
+          'Mouse : '+ mouseX + ', ' + mouseY + '<br>' +
+          'Circle : ' + circleX + ', ' + circleY + '<br>' +
+          'Displacement : ' + deltaX + ', ' + deltaY + '<br>' +
+          'Distance : ' + dist;
       }
 
       function key() {
