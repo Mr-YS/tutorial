@@ -42,6 +42,8 @@
 
       var circle = document.getElementById('circle');
       var result = document.getElementById('result');
+      var theta = 0.0;
+
       function mouseMove() {
         var mouseX = event.clientX;
         var mouseY = event.clientY;
@@ -61,8 +63,7 @@
           'Displacement : ' + deltaX + ', ' + deltaY + '<br>' +
           'Distance : ' + dist;
 
-        x += deltaX;
-        y += deltaY;
+        theta = Math.atan2(deltaY, deltaX);
       }
 
       function key() {
@@ -78,14 +79,22 @@
         circle.style.background = colors[i];
       }
 
+      var deltaT = 16; // millisecond
       setInterval(function() {
+        // Change x, y
+        var speed = 0.1;
+        var distance = speed * deltaT;
+        x += distance * Math.cos(theta);
+        y += distance * Math.sin(theta);
+
+        // Update circle's position
         if (650 < x) { x = 650; }
         if (-650 > x) { x = -650; }
         if (300 < y) { y = 300; }
         if (-300 > y) { y = -300; }
         circle.style.marginLeft = (x - 50) + 'px';
         circle.style.marginTop = (y - 50) + 'px';
-      }, 16);
+      }, deltaT);
     </script>
   </body>
 </html>
