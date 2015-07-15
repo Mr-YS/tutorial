@@ -38,10 +38,15 @@
     <span id="result"></span>
 
     <script>
-      var circleStyle = document.getElementById('circle').style;
+      var circle = document.getElementById('circle');
       var result = document.getElementById('result');
+      var clientCircle = circle.getBoundingClientRect();
+      var circleClientX = Math.floor(clientCircle.left);
+      var circleClientY = Math.floor(clientCircle.top);
       function mouseMove() {
-        result.innerHTML ='client : '+event.clientX+','+event.clientY;
+        result.innerHTML ='mouse-client : '+event.clientX+','+event.clientY+
+                          '<br>rect-client :'
+                          +circleClientX+','+circleClientY;
       }
 
       function key() {
@@ -54,7 +59,7 @@
       function changeColor() {
         var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
         var i = Math.floor(Math.random() * 5)
-        circleStyle.background = colors[i];
+        circle.style.background = colors[i];
       }
 
       var x = 0, y = 0;
@@ -63,8 +68,8 @@
         if (-650 > x) { x = -650; }
         if (300 < y) { y = 300; }
         if (-300 > y) { y = -300; }
-        circleStyle.marginLeft = (x - 50) + 'px';
-        circleStyle.marginTop = (y - 50) + 'px';
+        circle.style.marginLeft = (x - 50) + 'px';
+        circle.style.marginTop = (y - 50) + 'px';
       }, 16);
     </script>
   </body>
