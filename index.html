@@ -37,7 +37,9 @@
     <div id="box"></div>
 
     <script>
-      var mouseX = 0, mouseY = 0;
+      var circle = document.getElementById('circle');
+      var rect = circle.getBoundingClientRect();
+      var mouseX = rect.left + 50, mouseY = rect.top + 50;
       function mouseMove() {
         mouseX = event.clientX;
         mouseY = event.clientY;
@@ -50,7 +52,6 @@
         }
       }
 
-      var circle = document.getElementById('circle');
       function changeColor() {
         var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
         var i = Math.floor(Math.random() * 5)
