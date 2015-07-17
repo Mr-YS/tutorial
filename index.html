@@ -62,12 +62,14 @@
       setInterval(function() {
         // Update x, y
         var rect = circle.getBoundingClientRect();
-        var theta = Math.atan2(mouseY - (rect.top + 50.0), mouseX - (rect.left + 50.0));
-        console.log(theta);
 
-        var speed = 0.8;
+        var dx = mouseX - (rect.left + 50.0);
+        var dy = mouseY - (rect.top + 50.0);
+
+        var theta = Math.atan2(dy, dx);
+        var speed = 0.01 * Math.sqrt(dy*dy + dx*dx);
+
         var distance = speed * deltaT;
-
         x += distance * Math.cos(theta);
         y += distance * Math.sin(theta);
 
