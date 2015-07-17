@@ -49,9 +49,34 @@
         switch (event.keyCode) {
           case 27: window.close(); break; // ESC
           case 69: changeColor(); break; // E
+          case 38: sizeUp(); break; // UP
+          case 40: sizeDown(); break; // DOWN
+          case 82: sizeReset(); break; // R
         }
       }
 
+      var currentSize = 100;
+      function sizeUp() {
+        currentSize += 5;
+        if (currentSize > 150) {
+          currentSize = 150;
+        }
+        circle.style.width = currentSize+'px';
+        circle.style.height = currentSize+'px';
+      }
+      function sizeDown() {
+        currentSize -= 5;
+        if (currentSize < 50) {
+          currentSize = 50;
+        }
+        circle.style.width = currentSize+'px';
+        circle.style.height = currentSize+'px';
+      }
+      function sizeReset() {
+        currentSize = 100;
+        circle.style.width = currentSize+'px';
+        circle.style.height = currentSize+'px';
+      }
       function changeColor() {
         var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
         var i = Math.floor(Math.random() * 5)
