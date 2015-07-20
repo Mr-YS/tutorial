@@ -52,6 +52,7 @@
           case 38: sizeUp(); break; // UP
           case 40: sizeDown(); break; // DOWN
           case 82: sizeReset(); break; // R
+          case 87: autoChangeColor(); break; // W
         }
       }
 
@@ -121,6 +122,7 @@
         'whitesmoke'
       ];
       var iSave = 0;
+
       function changeColor() {
         var i = Math.floor(Math.random() * colors.length)
         if (iSave == i) {
@@ -137,6 +139,9 @@
         circle.style.background = colors[i];
       }
 
+      function autoChangeColor() {
+        setInterval(changeColor,300);
+      }
       var x = 0, y = 0;
       var deltaT = 16; // millisecond
       setInterval(function() {
