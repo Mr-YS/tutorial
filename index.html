@@ -77,9 +77,22 @@
         circle.style.width = currentSize+'px';
         circle.style.height = currentSize+'px';
       }
+
+      var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
+      var iSave = 0;
       function changeColor() {
-        var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
         var i = Math.floor(Math.random() * 5)
+        if (iSave == i) {
+          if (iSave == 0 && i == 0) {
+            i++;
+            iSave = i;
+          }
+          else {
+            i--;
+            iSave = i;
+          }
+        }
+        iSave = i;
         circle.style.background = colors[i];
       }
 
