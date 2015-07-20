@@ -139,9 +139,17 @@
         circle.style.background = colors[i];
       }
 
+      var autoColor = false;
+      var interval;
       function autoChangeColor() {
-        setInterval(changeColor,300);
+        if (!autoColor) {
+          interval = setInterval(changeColor,50);
+        } else {
+          clearInterval(interval);
+        }
+        autoColor = !autoColor;
       }
+
       var x = 0, y = 0;
       var deltaT = 16; // millisecond
       setInterval(function() {
