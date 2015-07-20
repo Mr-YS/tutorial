@@ -78,10 +78,51 @@
         circle.style.height = currentSize+'px';
       }
 
-      var colors = [ 'red', 'orange', 'blue', 'cyan', 'yellowgreen' ];
+      var colors = [
+        'red',
+        'aliceblue',
+        'aqua',
+        'aquamarine',
+        'azure',
+        'bisque',
+        'black',
+        'blue',
+        'blueviolet',
+        'brown',
+        'burlywood',
+        'chartreuse',
+        'chocolate',
+        'crimson',
+        'cyan',
+        'darkblue',
+        'darkgoldenrod',
+        'darkgreen',
+        'darkmagenta',
+        'darkorange',
+        'darkred',
+        'darkturquoise',
+        'deeppink',
+        'darkskyblue',
+        'dodgerblue',
+        'firebrick',
+        'fuchsia',
+        'gold',
+        'greenyellow',
+        'green',
+        'indigo',
+        'hotpink',
+        'lawngreen',
+        'lime',
+        'limegreen',
+        'magenta',
+        'yellow',
+        'tomato',
+        'yellowgreen',
+        'whitesmoke'
+      ];
       var iSave = 0;
       function changeColor() {
-        var i = Math.floor(Math.random() * 5)
+        var i = Math.floor(Math.random() * colors.length)
         if (iSave == i) {
           if (iSave == 0 && i == 0) {
             i++;
