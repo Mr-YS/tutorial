@@ -1,0 +1,26 @@
+#circle {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: red;
+  margin-top: -50px;
+  margin-left:-50px;
+}
+
+#box {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 1400px;
+  height: 700px;
+  border-radius: 25px;
+  margin-top: -350px;
+  margin-left: -700px;
+  border-style: dashed;
+  border-width: 10px;
+  border-color: gray;
+  box-sizing: border-box;
+}
